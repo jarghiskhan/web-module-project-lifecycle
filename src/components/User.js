@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class User extends React.Component {
   constructor() {
     super();
@@ -10,12 +9,16 @@ class User extends React.Component {
   }
 
   render() {
-      console.log(this.props)
+    console.log("Followers: ", this.props.user.followers);
     return (
-      <div>
+      <div className="userCard">
         <h3>{this.props.user.name}</h3>
-        <p>{this.props.user.followers.length}</p>
-        <button>View Followers</button>
+        <h4>Followers: {this.props.user.followers.length}</h4>
+        <ul>
+          {this.props.user.followers.map((follower) => (
+            <li>{follower.login}</li>
+          ))}
+        </ul>
       </div>
     );
   }

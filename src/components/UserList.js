@@ -5,10 +5,8 @@ const UserList = (props) => {
   console.log("User list ", props);
   return (
   <>
-    <div>
-      <h2>Users</h2>
+    <div className="userList">
       {props.data.map((user, index) => {
-        console.log('User list: ', user);
         return <User key={index} user={user}></User>;
       })}
     </div></>
